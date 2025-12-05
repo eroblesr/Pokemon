@@ -15,7 +15,12 @@ function App() {
           type="text" 
           onChange={(e)=>setName(e.target.value)} 
           placeholder='Search Pokemon'/>
-          <button className='search-btn' onClick={()=>fetchPokemon(name)}> Search</button>
+          <button 
+          className='search-btn' 
+          onClick={() => {
+          fetchPokemon(name);
+          setName("");      
+          }}> Search</button>
         </div>
         
         {loading && <p>Loading...</p>}
